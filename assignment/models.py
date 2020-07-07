@@ -19,13 +19,14 @@ class Address(models.Model):
     def __str__(self):
         return self.streetAddress
 
-class User(AbstractUser):
+class Profile(AbstractUser):
     phoneNumber = models.CharField(unique=True, max_length=10)
     gender = GENDER_CHOICES
     profilePic = models.ImageField(upload_to='uploads/', null=True)
     dob = models.DateField(null=True)
     permanentAddress = models.OneToOneField(Address, on_delete=models.CASCADE, null=True)
     # companyAddress = models.OneToOneField(Address, on_delete=models.CASCADE)
+    friends = models.ManyToManyField('self', null=True, related_name='friends', blank=True)
 
     def __str__(self):
         return self.phoneNumber

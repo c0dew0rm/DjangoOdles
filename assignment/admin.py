@@ -1,12 +1,12 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Address, User
+from .models import Address, Profile
 
 @admin.register(Address)
 class AddressAdmin(admin.ModelAdmin):
     pass
 
-@admin.register(User)
-class UserAdmin(admin.ModelAdmin):
+@admin.register(Profile)
+class ProfileAdmin(admin.ModelAdmin):
     pass

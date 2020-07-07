@@ -124,4 +124,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-AUTH_USER_MODEL = 'assignment.User'
+AUTH_USER_MODEL = 'assignment.Profile'
